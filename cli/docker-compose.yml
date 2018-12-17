@@ -1,0 +1,7 @@
+version: '2.0'
+services:
+  phpcli:
+    image: shanliu/php:cli
+    build:
+      context: ./
+    
