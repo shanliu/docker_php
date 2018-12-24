@@ -22,6 +22,7 @@ RUN set -ex \
 && tar zfvx ./phpredis.tar.gz \
 && mv phpredis-* /usr/src/php/ext/redis \
 && rm -rf phpredis-* \
+#docker-php-ext-configure gd  --with-jpeg-dir=/usr/include/  --with-freetype-dir=/usr/include/
 && docker-php-ext-install \
 	sockets \
 	bcmath \
