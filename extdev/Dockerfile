@@ -99,6 +99,6 @@ RUN set -ex \
 
 WORKDIR /root/php/ext
 
-ENTRYPOINT ["/bin/bash","-c","source ~/.profile"]
+
 CMD ["/bin/bash"]
 
