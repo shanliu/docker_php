@@ -99,7 +99,7 @@ RUN set -ex \
 && composer self-update \
 && composer global config repo.packagist composer https://mirrors.aliyun.com/composer/ \
 && composer global require phpunit/phpunit -vvv \
-&& composer config --unset repos.packagist \
+&& composer global config --unset repos.packagist \
 && sed -i '$a\export PATH="\$HOME/.composer/vendor/bin:\$PATH"' ~/.bashrc 
 
 WORKDIR /root/php/ext
