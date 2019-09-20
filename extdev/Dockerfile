@@ -57,27 +57,27 @@ RUN set -ex \
 && cp php.ini-development /usr/local/lib/php.ini \
 && cd ./ext \
 #redis
-&& wget  -t0 --no-check-certificate -O ./phpredis.tar.gz  https://github.com/phpredis/phpredis/archive/4.2.0.tar.gz \
-&& tar zfvx ./phpredis.tar.gz \
-&& cd phpredis-* \
-&& phpize  \
-&& ./configure \
-&& make -j 4  \
-&& make install \
-&& sed -i '$a\extension=redis.so' /usr/local/lib/php.ini \
-&& cd .. \
-&& rm -rf php/ext/phpredis* \
-#redis
-&& wget  -t0 --no-check-certificate -O ./xdebug-2.8.0beta2.tgz  https://xdebug.org/files/xdebug-2.8.0beta2.tgz \
-&& tar zfvx ./xdebug-2.8.0beta2.tgz \
-&& cd xdebug-2.8.0beta2 \
-&& phpize  \
-&& ./configure \
-&& make -j 4  \
-&& make install \
-&& sed -i '$a\zend_extension=xdebug.so' /usr/local/lib/php.ini \
-&& cd .. \
-&& rm -rf php/ext/phpredis* \
+#&& wget  -t0 --no-check-certificate -O ./phpredis.tar.gz  https://github.com/phpredis/phpredis/archive/4.2.0.tar.gz \
+#&& tar zfvx ./phpredis.tar.gz \
+#&& cd phpredis-* \
+#&& phpize  \
+#&& ./configure \
+#&& make -j 4  \
+#&& make install \
+#&& sed -i '$a\extension=redis.so' /usr/local/lib/php.ini \
+#&& cd .. \
+#&& rm -rf php/ext/phpredis* \
+#xdebug
+#&& wget  -t0 --no-check-certificate -O ./xdebug-2.8.0beta2.tgz  https://xdebug.org/files/xdebug-2.8.0beta2.tgz \
+#&& tar zfvx ./xdebug-2.8.0beta2.tgz \
+#&& cd xdebug-2.8.0beta2 \
+#&& phpize  \
+#&& ./configure \
+#&& make -j 4  \
+#&& make install \
+#&& sed -i '$a\zend_extension=xdebug.so' /usr/local/lib/php.ini \
+#&& cd .. \
+#&& rm -rf php/ext/xdebug* \
 #swoole
 #&& wget -t0 --no-check-certificate -O ./swoole.tar.gz  https://github.com/swoole/swoole-src/archive/v4.2.9.tar.gz \
 #&& tar zfvx ./swoole.tar.gz \
@@ -103,7 +103,6 @@ RUN set -ex \
 && sed -i '$a\export PATH="\$HOME/.composer/vendor/bin:\$PATH"' ~/.bashrc 
 
 WORKDIR /root/php/ext
-
 
 CMD ["/bin/bash"]
 
