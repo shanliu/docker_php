@@ -32,6 +32,7 @@ RUN set -ex \
 	re2c \
 	bison \
 	net-tools \
+	gdb \
 	iputils-ping \
 #openssl
 && cd ~ \
