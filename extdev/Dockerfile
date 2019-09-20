@@ -1,9 +1,10 @@
 FROM ubuntu:latest
 
 RUN set -ex \
-&& sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list \
+&& sed -i s@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g /etc/apt/sources.list \
 && apt clean \
 && apt update \
+&& apt upgrade \
 && apt install -y \
 	libzzip-dev \
 	libzip-dev \
