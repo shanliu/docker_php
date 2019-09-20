@@ -30,6 +30,8 @@ RUN set -ex \
 	less \
 	re2c \
 	bison \
+	net-tools \
+	iputils-ping \
 #openssl
 && cd ~ \
 && wget -t0 --no-check-certificate https://www.openssl.org/source/openssl-1.1.1d.tar.gz \
