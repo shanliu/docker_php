@@ -97,7 +97,7 @@ RUN set -ex \
 && mv ./composer.phar /usr/local/bin/ \
 && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer \
 && composer self-update \
-&& composer config repo.packagist composer https://mirrors.aliyun.com/composer/ \
+&& composer global config repo.packagist composer https://mirrors.aliyun.com/composer/ \
 && composer global require phpunit/phpunit -vvv \
 && composer config --unset repos.packagist \
 && sed -i '$a\export PATH="\$HOME/.composer/vendor/bin:\$PATH"' ~/.bashrc 
