@@ -33,6 +33,7 @@ RUN set -ex \
 	bison \
 	net-tools \
 	gdb \
+	git \
 	iputils-ping \
 #openssl
 && cd ~ \
